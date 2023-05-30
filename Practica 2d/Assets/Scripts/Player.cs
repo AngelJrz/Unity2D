@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     public float jumpForce;
     private Rigidbody2D rigidbody2d;
+    public GameManager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +19,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (manager.start == true)
         {
-            animator.SetBool("IsJumping", true);
-            rigidbody2d.AddForce(new Vector2(0, jumpForce));
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetBool("IsJumping", true);
+                rigidbody2d.AddForce(new Vector2(0, jumpForce));
+            }
         }
     }
 
@@ -29,6 +33,11 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Floor")
         {
             animator.SetBool("IsJumping", false);
+        }
+
+        if (collision.gameObject.tag == "obstacle")
+        {
+            manager.GameOver = true;
         }
     }
 }
