@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D personaje;
     private Animator animacionDePersonaje;
     private SpriteRenderer spriteDePersonaje;
+    [SerializeField] private AudioSource JumpSoundEffect;
     private float directionX;
     private bool puedeSaltarNuevamente;
 
@@ -51,7 +52,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 //GetComponent<Rigidbody2D>().AddForce(new Vector2(0, Salto));
                 personaje.velocity = new Vector2(personaje.velocity.x, Salto);
+                JumpSoundEffect.Play();
                 puedeSaltarNuevamente = false;
+
             }
         }
     }
