@@ -7,3 +7,5 @@ Proyectos de practica y modificaciones
 
 ## Juego generico 2
 [Tutorial fuente](https://www.youtube.com/playlist?list=PLrnPJCHvNZuCVTz6lvhR81nnaf1a-b67U)
+
+![image](https://github.com/AngelJrz/Unity2D/assets/61328294/0884b197-d4ff-4ecc-9210-8af778f6664e)
